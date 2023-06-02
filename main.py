@@ -4,7 +4,7 @@ import os
 from img2table.document import Image
 from img2table.ocr import TesseractOCR
 
-ocr = TesseractOCR(lang="eng")
+ocr = TesseractOCR(lang="eng", tessdata_dir="./testdata")
 
 #img = Image(src="/tmp/img/Scan0001.jpg")
 img = Image(src="/tmp/img/test.jpg")
