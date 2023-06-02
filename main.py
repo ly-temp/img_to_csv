@@ -2,14 +2,12 @@ import cv2
 
 img = cv2.imread('/tmp/img/Scan0001.jpg')
 hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-mask = cv2.inRange(hsv, (0, 0, 0), (170, 40, 255))
+mask = cv2.inRange(hsv, (100, 15, 100), (170, 255, 255))
 inv_mask = cv2.bitwise_not(mask)
-b,g,r = cv2.split(img)
-b = cv2.bitwise_and(b,b,inv_mask)
-g = cv2.bitwise_and(g,g,inv_mask)
-r = cv2.bitwise_and(r,r,inv_mask)
-masked = cv2.merge((b,g,r))
-cv2.imwrite('out.png', inv_mask)
+out = cv2.bitwise_and(img, img, inv_mask)
+out = 255 * (out/255)**30
+cv2.imwrite('out.png', out)
+
 exit()
 
 from img2table.document import Image
