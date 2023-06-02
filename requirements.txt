@@ -1,0 +1,3 @@
+img2table
+opencv-python-headless
+#tesserocr
