@@ -1,3 +1,8 @@
 img2table
 opencv-python-headless
+wheel
+pandas
+
 #tesserocr
+google-api-python-client
+google-auth-oauthlib
